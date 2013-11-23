@@ -19,10 +19,8 @@
 	</properties>
 
 	<modules>
-		<!--
-		<module>personslist-repo-model-jpa</module>
-		<module>personslist-repo-web</module>
-		-->
+		<module>personslist-model-jpa</module>
+		<module>personslist-web</module>
 	</modules>
 
 	<dependencies>
