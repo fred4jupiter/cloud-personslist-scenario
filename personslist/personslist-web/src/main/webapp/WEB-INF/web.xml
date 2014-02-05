@@ -24,6 +24,16 @@
 		<servlet-name>ResourceServlet</servlet-name>
 		<url-pattern>/test-resources/*</url-pattern>
 	</servlet-mapping>
+
+	<!-- data load startup servlet -->
+	<servlet>
+		<description></description>
+		<display-name>StartupServlet</display-name>
+		<servlet-name>StartupServlet</servlet-name>
+		<servlet-class>com.sap.hana.cloud.web.StartupServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
 	<!-- BEGIN: DEV MODE -->
 	<!-- DEV MODE switched off by default and can be switched on during development -->
 	<!-- but has to be switched off for productive use on a Java server! -->
