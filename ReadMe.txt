@@ -82,7 +82,7 @@ The checked out local branch contains the sources of the PersonsList Extension-0
   
 3.2 Maven build of SFlight application
 ---------------------------------------
-1. In Eclipse Project Explorer, select (TODO: project name) sflight-web node and open context menu 
+1. In Eclipse Project Explorer, select sflight-web node and open context menu 
 2. Choose Run As > Maven build... ; Edit Configuration dialog opens 
 3. Enter "clean install" as Goals
 4. Choose Run to start the Maven build 
@@ -156,7 +156,7 @@ After about a minute the SFlight application, running on SAP HANA Cloud Platform
      The RFC destination properties are explained in detail here: https://help.hana.ondemand.com/help/frameset.htm?e184daba118b46679c6968567bacc98e.html
      Note: The properties are pre-configured with following two values:  
         jco.client.mshost=abap.sflight.host
-        jco.client.r3name=fli
+        jco.client.r3name=FLI
      These values are relevant for the configuration of the ABAP system in the SAP HANA Cloud Connector, section 4.2.4. We recommend to leave them as 
      is so that the configuration done in 4.2.4 fits to the destination configuration. 
   5. Save the application. This will deploy the configuration into the cloud. 
@@ -173,7 +173,7 @@ After about a minute the SFlight application, running on SAP HANA Cloud Platform
      Under "Mapping Virtual to Internal System" click the "Add..." button.  
      Enter and save following values in the Add System Mapping dialog:  
         Virutal Host = abap.sflight.host
-        Virtual Port = sapmsfli
+        Virtual Port = sapmsFLI
         Interal Host = <physical host name of the ABAP system>
         Interal Port = <port of the ABAP system>
         Protocol = RFC
