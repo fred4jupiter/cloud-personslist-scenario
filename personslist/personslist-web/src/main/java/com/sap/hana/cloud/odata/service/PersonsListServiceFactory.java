@@ -14,12 +14,10 @@ public class PersonsListServiceFactory extends ODataJPAServiceFactory {
 	private static final String PERSISTENCE_UNIT_NAME = "personslist-model-jpa";
 
 	@Override
-	public ODataJPAContext initializeODataJPAContext()
-			throws ODataJPARuntimeException {
+	public ODataJPAContext initializeODataJPAContext() throws ODataJPARuntimeException {
 		ODataJPAContext oDataJPAContext = this.getODataJPAContext();
 		try {
-			EntityManagerFactory emf = JpaEntityManagerFactory
-					.getEntityManagerFactory();
+			EntityManagerFactory emf = JpaEntityManagerFactory.getEntityManagerFactory();
 			oDataJPAContext.setEntityManagerFactory(emf);
 			oDataJPAContext.setPersistenceUnitName(PERSISTENCE_UNIT_NAME);
 			return oDataJPAContext;

@@ -9,8 +9,17 @@
 	</parent>
 
 	<artifactId>personslist-repo-web</artifactId>
-	<packaging>war</packaging>
 
+	<packaging>war</packaging>
+	
+	<description>Call http://localhost:8080/personslist-repo-web for local testing</description>
+
+	<properties>
+		<sap.cloud.sdk.version>1.53.18.2</sap.cloud.sdk.version>
+		<sap.cloud.ui5.version>1.20.4</sap.cloud.ui5.version>
+		<eclipse.path>c:/SW/eclipse_SAP_HANA</eclipse.path>
+	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>com.sap.hana.cloud.sample</groupId>
@@ -57,7 +66,7 @@
 		<dependency>
 			<groupId>com.sap.cloud</groupId>
 			<artifactId>neo-java-web-api</artifactId>
-			<version>${sap.cloud.sdk.version}</version>
+			<version>1.53.18.2</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -84,20 +93,23 @@
 			<version>1.7.2</version>
 			<scope>provided</scope>
 		</dependency>
+
+
+
 		<!-- SAP UI5 dependencies -->
 		<dependency>
 			<groupId>com.sap.ca.scfld.md</groupId>
 			<artifactId>com.sap.ca.scfld.md</artifactId>
-			<version>${sap.cloud.ui5.version}</version>
+			<version>1.20.5</version>
 			<scope>system</scope>
-			<systemPath>${eclipse.path}/plugins/com.sap.ca.scfld.md_${sap.cloud.ui5.version}.jar</systemPath>
+			<systemPath>${eclipse.path}/plugins/com.sap.ca.scfld.md_1.20.5.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>com.sap.ca.ui</groupId>
 			<artifactId>com.sap.ca.ui</artifactId>
-			<version>${sap.cloud.ui5.version}</version>
+			<version>1.20.5</version>
 			<scope>system</scope>
-			<systemPath>${eclipse.path}/plugins/com.sap.ca.ui_${sap.cloud.ui5.version}.jar</systemPath>
+			<systemPath>${eclipse.path}/plugins/com.sap.ca.ui_1.20.5.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>com.sap.collaboration.collaboration-commons</groupId>
@@ -191,11 +203,11 @@
 			<systemPath>${eclipse.path}/plugins/com.sap.ui5.themelib_sap_goldreflection_${sap.cloud.ui5.version}.jar</systemPath>
 		</dependency>
 		<dependency>
-			<groupId>com.sap.ui5.themelib_sap_ux</groupId>
-			<artifactId>com.sap.ui5.themelib_sap_ux</artifactId>
+			<groupId>com.sap.ui5.themelib_sap_bluecrystal</groupId>
+			<artifactId>com.sap.ui5.themelib_sap_bluecrystal</artifactId>
 			<version>${sap.cloud.ui5.version}</version>
 			<scope>system</scope>
-			<systemPath>${eclipse.path}/plugins/com.sap.ui5.themelib_sap_ux_${sap.cloud.ui5.version}.jar</systemPath>
+			<systemPath>${eclipse.path}/plugins/com.sap.ui5.themelib_sap_bluecrystal_${sap.cloud.ui5.version}.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>com.sap.ui5.utils</groupId>
@@ -328,9 +340,9 @@
 				<sap.cloud.console.script>/c neo.bat</sap.cloud.console.script>
 			</properties>
 		</profile>
-		<!-- Install local server from the P2 repository that is contained inside
-			the SDK, deploy the built web application into it, start local server, wait
-			for it and the built and deployed web application to become available, integration-test
+		<!-- Install local server from the P2 repository that is contained inside 
+			the SDK, deploy the built web application into it, start local server, wait 
+			for it and the built and deployed web application to become available, integration-test 
 			the web application on the local server, and stop the local server finally -->
 		<profile>
 			<id>local-integration-tests</id>
@@ -420,7 +432,8 @@
 									<goal>integration-test</goal>
 								</goals>
 								<configuration>
-									<argLine>-Dhttp.proxyHost=0 -Dhttp.proxyPort=0 -Dhttps.proxyHost=0 -Dhttps.proxyPort=0</argLine>
+									<argLine>-Dhttp.proxyHost=0 -Dhttp.proxyPort=0
+										-Dhttps.proxyHost=0 -Dhttps.proxyPort=0</argLine>
 									<systemPropertyVariables>
 										<integration.test.server.url>http://${local.server.host}:${local.server.http.port}</integration.test.server.url>
 										<webdriver.firefox.bin>${webdriver.firefox.bin}</webdriver.firefox.bin>
