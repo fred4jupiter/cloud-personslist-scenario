@@ -13,12 +13,6 @@
 	<packaging>war</packaging>
 	
 	<description>Call http://localhost:8080/personslist-repo-web for local testing</description>
-
-	<properties>
-		<sap.cloud.sdk.version>1.53.18.2</sap.cloud.sdk.version>
-		<sap.cloud.ui5.version>1.20.4</sap.cloud.ui5.version>
-		<eclipse.path>c:/SW/eclipse_SAP_HANA</eclipse.path>
-	</properties>
 	
 	<dependencies>
 		<dependency>
